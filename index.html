@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cha Panela Aline & Gabriel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<style>
+    body {
+        background-color: #fff;
+        font-size: 40px;
+        font-family: Helvetica, sans-serif;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(to right, #ff54da, #07c5ff); /* Gradiente horizontal */
+    }
+
+    h1 {
+        text-shadow: 0 3px #1d201e;
+        text-align: center;
+    }
+
+    .foto {
+        width: 300px;
+        height: auto;
+        margin: 10px;
+        border-radius: 10px;
+    }
+
+    .foto-container {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .download-link {
+        display: block;
+        color: #fff;
+        background-color: #ce12af;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .download-link:hover {
+        background-color: #5aedff;
+    }
+
+    .galeria-de-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    img {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Estilos para a barra lateral */
+    .sidebar {
+        position: fixed;
+        width: 0.5%;
+        height: 60%;
+        right: 0;
+        top: 0;
+        border-radius: 50px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar p {
+        font-size: 50%;
+        display: flex;
+        align-items: center;
+        writing-mode: vertical-rl; /* Texto na vertical */
+        text-orientation: mixed; /* Orientação mista para garantir compatibilidade */
+    }
+
+    .rede-social {
+        font-size: 40px;
+        margin: 10px;
+        color: #1d201e;
+
+    }
+</style>
+
+<body>
+
+    <div class="sidebar">
+        <p>Desenvolvido por Marcelio Venancio</p>
+        <div class="redes-sociais">
+            <a href="https://www.instagram.com/marcelio_venancio/"><i class="fab fa-instagram rede-social"></i></a>
+            <a href="https://wa.me/+5562986369673"><i class="fab fa-whatsapp rede-social"></i></a>
+            <a href="https://marceliovenancio.vercel.app/"><i class="fas fa-globe rede-social"></i></a>
+        </div>
+    </div>
+
+
+    <img src="https://github.com/Goguenblouts/CPAG-FOTOS/blob/main/titulo-cha.png?raw=true" alt="titulo">
+    <h1></h1>
+
+    <div class="galeria-de-fotos" id="galeria-de-fotos">
+    </div>
+
+    <script>
+        const nomesFotos = [
+        "cp-1.jpg", "cp-2.jpg", "cp-3.jpg", "cp-4.jpg", "cp-5.jpg", "cp-6.jpg", "cp-7.jpg", "cp-8.jpg", "cp-9.jpg", "cp-10.jpg", 
+"cp-11.jpg", "cp-12.jpg", "cp-13.jpg", "cp-14.jpg", "cp-15.jpg", "cp-16.jpg", "cp-17.jpg", "cp-18.jpg", "cp-19.jpg", "cp-20.jpg", 
+"cp-21.jpg", "cp-22.jpg", "cp-23.jpg", "cp-24.jpg", "cp-25.jpg", "cp-26.jpg", "cp-27.jpg", "cp-28.jpg", "cp-29.jpg", "cp-30.jpg", 
+"cp-31.jpg", "cp-32.jpg", "cp-33.jpg", "cp-34.jpg", "cp-35.jpg", "cp-36.jpg", "cp-37.jpg", "cp-38.jpg", "cp-39.jpg", "cp-40.jpg", 
+"cp-41.jpg", "cp-42.jpg", "cp-43.jpg", "cp-44.jpg", "cp-45.jpg", "cp-46.jpg", "cp-47.jpg", "cp-48.jpg", "cp-49.jpg", "cp-50.jpg", 
+"cp-51.jpg", "cp-52.jpg", "cp-53.jpg", "cp-54.jpg", "cp-55.jpg", "cp-56.jpg", "cp-57.jpg", "cp-58.jpg", "cp-59.jpg", "cp-60.jpg", 
+"cp-61.jpg", "cp-62.jpg", "cp-63.jpg", "cp-64.jpg", "cp-65.jpg", "cp-66.jpg", "cp-67.jpg", "cp-68.jpg", "cp-69.jpg", "cp-70.jpg", 
+"cp-71.jpg", "cp-72.jpg", "cp-73.jpg", "cp-74.jpg", "cp-75.jpg", "cp-76.jpg", "cp-77.jpg", "cp-78.jpg", "cp-79.jpg", "cp-80.jpg", 
+"cp-81.jpg", "cp-82.jpg", "cp-83.jpg", "cp-84.jpg", "cp-85.jpg", "cp-86.jpg", "cp-87.jpg", "cp-88.jpg", "cp-89.jpg", "cp-90.jpg", 
+"cp-91.jpg", "cp-92.jpg", "cp-93.jpg", "cp-94.jpg", "cp-95.jpg", "cp-96.jpg", "cp-97.jpg", "cp-98.jpg", "cp-99.jpg", "cp-100.jpg", 
+"cp-101.jpg", "cp-102.jpg", "cp-103.jpg", "cp-104.jpg", "cp-105.jpg", "cp-106.jpg", "cp-107.jpg", "cp-108.jpg", "cp-109.jpg", "cp-110.jpg", 
+"cp-111.jpg", "cp-112.jpg", "cp-113.jpg", "cp-114.jpg", "cp-115.jpg", "cp-116.jpg", "cp-117.jpg", "cp-118.jpg", "cp-119.jpg", "cp-120.jpg", 
+"cp-121.jpg", "cp-122.jpg", "cp-123.jpg", "cp-124.jpg", "cp-125.jpg", "cp-126.jpg", "cp-127.jpg", "cp-128.jpg", "cp-129.jpg", "cp-130.jpg", 
+"cp-131.jpg", "cp-132.jpg", "cp-133.jpg", "cp-134.jpg", "cp-135.jpg", "cp-136.jpg", "cp-137.jpg", "cp-138.jpg", "cp-139.jpg", "cp-140.jpg", 
+"cp-141.jpg", "cp-142.jpg", "cp-143.jpg", "cp-144.jpg", "cp-145.jpg", "cp-146.jpg", "cp-147.jpg", "cp-148.jpg", "cp-149.jpg", "cp-150.jpg", 
+"cp-151.jpg", "cp-152.jpg", "cp-153.jpg", "cp-154.jpg", "cp-155.jpg", "cp-156.jpg", "cp-157.jpg", "cp-158.jpg", "cp-159.jpg", "cp-160.jpg", 
+"cp-161.jpg", "cp-162.jpg", "cp-163.jpg", "cp-164.jpg", "cp-165.jpg", "cp-166.jpg", "cp-167.jpg", "cp-168.jpg", "cp-169.jpg", "cp-170.jpg", 
+"cp-171.jpg", "cp-172.jpg", "cp-173.jpg", "cp-174.jpg", "cp-175.jpg", "cp-176.jpg", "cp-177.jpg", "cp-178.jpg", "cp-179.jpg", "cp-180.jpg"
+
+
+ 
+        ];
+
+        const galeriaFotos = document.getElementById('galeria-de-fotos');
+
+        for (let i = 0; i < nomesFotos.length; i++) {
+            const fotoContainer = document.createElement('div');
+            fotoContainer.className = 'foto-container';
+
+            const img = document.createElement('img');
+            img.src = `https://github.com/Goguenblouts/CPAG-FOTOS/raw/main/${nomesFotos[i]}`;
+            img.alt = `Foto ${i + 1}`;
+            img.className = 'foto';
+
+            const linkDownload = document.createElement('a');
+            linkDownload.href = `https://github.com/Goguenblouts/CPAG-FOTOS/raw/main/${nomesFotos[i]}`;
+            linkDownload.textContent = `Baixar Foto`;
+            linkDownload.setAttribute('download', `Foto${i + 1}.jpg`);
+            linkDownload.className = 'download-link';
+
+            fotoContainer.appendChild(img);
+            fotoContainer.appendChild(linkDownload);
+
+            galeriaFotos.appendChild(fotoContainer);
+        }
+    </script>
+</body>
+</html>
